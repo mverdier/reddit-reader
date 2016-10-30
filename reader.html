@@ -12,11 +12,14 @@
 
 	<body ng-app="myApp" ng-controller="MainController">
 
+		<input type="text" name="subreddit" ng-model="subreddit">
+		<button ng-click="getSubreddit(subreddit)">Get the sub!</button>
+
 		<section class="container">
-
+			<div class="card hoverable" ng-repeat="post in content.data.children">
+				<h3>{{ post.title }}</h3>
+			</div>
 		</section>
-
-
 
 
 		<!-- Materialize's JS -->
@@ -26,6 +29,6 @@
 		<script src="js/app.js"></script>
 
 		<!-- Controllers -->
-		<script src="js/controllers/MainController.js"></script>
+		<script src="js/controllers/RedditController.js"></script>
 	</body>
 </html>
